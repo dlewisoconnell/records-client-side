@@ -18,6 +18,7 @@
       background-color: #f2f2f2;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <h1>Records</h1>
@@ -32,6 +33,8 @@
     </thead>
     <tbody id="records-body"></tbody>
   </table>
+
+  <canvas id="myChart"></canvas>
 
   <script>
     fetch('records.json') // Change the URL to the path of the JSON file
@@ -58,8 +61,33 @@
 
           recordsBody.appendChild(row);
         });
+
+        // Create a bar chart using Chart.js
+        const labels = data.map(record => record.title);
+        const values = data.map(record => record.releaseYear);
+        const ctx = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Release Year',
+              data: values,
+              backgroundColor: 'rgba(0, 123, 255, 0.5)'
+            }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
       })
       .catch(error => console.error(error));
   </script>
 </body>
 </html>
+
