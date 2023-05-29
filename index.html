@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Example</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Records</h1>
+  <table id="records-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Release Year</th>
+        <th>Format</th>
+      </tr>
+    </thead>
+    <tbody id="records-body"></tbody>
+  </table>
+
+  <script>
+    fetch('records.json') // Change the URL to the path of the JSON file
+      .then(response => response.json())
+      .then(data => {
+        // Update the UI with the retrieved data
+        const recordsBody = document.getElementById('records-body');
+        data.forEach(record => {
+          const row = document.createElement('tr');
+          const titleCell = document.createElement('td');
+          const artistCell = document.createElement('td');
+          const yearCell = document.createElement('td');
+          const formatCell = document.createElement('td');
+
+          titleCell.textContent = record.title;
+          artistCell.textContent = record.artist;
+          yearCell.textContent = record.releaseYear;
+          formatCell.textContent = record.format;
+
+          row.appendChild(titleCell);
+          row.appendChild(artistCell);
+          row.appendChild(yearCell);
+          row.appendChild(formatCell);
+
+          recordsBody.appendChild(row);
+        });
+      })
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>
