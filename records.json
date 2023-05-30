@@ -1,14 +1,294 @@
-[
-  {
-    "title": "Bruised Orange",
-    "artist": "John Prine",
-    "releaseYear": 1978,
+[{
+    "title": "Answer That and Stay Fashionable",
+    "artist": "AFI",
+    "releaseYear": 1997,
     "format": "LP"
   },
   {
-    "title": "Sweet Revenge",
-    "artist": "John Prine",
+    "title": "The Psychedelic Sounds of",
+    "artist": "13th Floor Elevators",
+    "releaseYear": 1966,
+    "format": "LP"
+  },{
+    "title": "Sing The Sorrow",
+    "artist": "AFI",
+    "releaseYear": 2003,
+    "format": "LP"
+  },{
+    "title": "As The Eternal Cowboy",
+    "artist": "Against Me!",
+    "releaseYear": 2003,
+    "format": "LP"
+  },{
+    "title": "Transgender Dysphoria Blues",
+    "artist": "Against Me!",
+    "releaseYear": 2014,
+    "format": "LP"
+  },{
+    "title": "Heavy Window",
+    "artist": "Apache Dropout",
+    "releaseYear": 2014,
+    "format": "LP"
+  },{
+    "title": "Magnetic Heads",
+    "artist": "Apache Dropout",
+    "releaseYear": 2013,
+    "format": "LP"
+  },{
+    "title": "Gold",
+    "artist": "Anwar Sadat",
+    "releaseYear": 2013,
+    "format": "LP"
+  },{
+    "title": "Bad Brains",
+    "artist": "Bad Brains",
+    "releaseYear": 1982,
+    "format": "LP"
+  },{
+    "title": "Wild Planet",
+    "artist": "The B-52's",
+    "releaseYear": 1980,
+    "format": "LP"
+  },{
+    "title": "Whammy!",
+    "artist": "The B-52's",
+    "releaseYear": 1983,
+    "format": "LP"
+  },{
+    "title": "Dead Loop",
+    "artist": "Tim Barnes",
+    "releaseYear": 2020,
+    "format": "LP"
+  },{
+    "title": "Pet Sounds",
+    "artist": "Beach Boys",
+    "releaseYear": 1966,
+    "format": "LP"
+  },{
+    "title": "The Smile Sessions",
+    "artist": "Beach Boys",
+    "releaseYear": 2011,
+    "format": "LP"
+  },{
+    "title": "Fade Away",
+    "artist": "Best Coast",
+    "releaseYear": 2013,
+    "format": "LP"
+  },{
+    "title": "Chuck Berry's Golden Hits",
+    "artist": "Chuck Berry",
+    "releaseYear": 1967,
+    "format": "LP"
+  },{
+    "title": "Headache",
+    "artist": "Big Black",
+    "releaseYear": 1989,
+    "format": "LP"
+  },{
+    "title": "Songs About...",
+    "artist": "Big Black",
+    "releaseYear": 1987,
+    "format": "LP"
+  },{
+    "title": "Hard Life",
+    "artist": "Big Eyes",
+    "releaseYear": 2011,
+    "format": "LP"
+  }, {
+    "title": "Number 1 Record",
+    "artist": "Big Star",
+    "releaseYear": 1972,
+    "format": "LP"
+  },{
+    "title": "Art Offensive",
+    "artist": "Black Cross",
+    "releaseYear": 2003,
+    "format": "LP"
+  },{
+    "title": "Severance Pays",
+    "artist": "Black Cross",
+    "releaseYear": 2007,
+    "format": "LP"
+  },{
+    "title": "The First Four Years",
+    "artist": "Black Flag",
+    "releaseYear": 1983,
+    "format": "LP"
+  },{
+    "title": "My War",
+    "artist": "Black Flag",
+    "releaseYear": 1984,
+    "format": "LP"
+  },{
+    "title": "Paranoid",
+    "artist": "Black Sabbath",
+    "releaseYear": 1970,
+    "format": "LP"
+  },{
+    "title": "Master of Reality",
+    "artist": "Black Sabbath",
+    "releaseYear": 1971,
+    "format": "LP"
+  },{
+    "title": "Vol 4",
+    "artist": "Black Sabbath",
+    "releaseYear": 1972,
+    "format": "LP"
+  },{
+    "title": "Sabbath Bloody Sabbath",
+    "artist": "Black Sabbath",
     "releaseYear": 1973,
+    "format": "LP"
+  },{
+    "title": "Split",
+    "artist": "Blatz/Filth",
+    "releaseYear": 1991,
+    "format": "LP"
+  },{
+    "title": "In My House",
+    "artist": "David Bromberg",
+    "releaseYear": 1978,
+    "format": "LP"
+  },{
+    "title": "Bugg",
+    "artist": "Bugg",
+    "releaseYear": 2017,
+    "format": "LP"
+  },{
+    "title": "Sweetheart of the Rodeo",
+    "artist": "The Byrds",
+    "releaseYear": 1968,
+    "format": "LP"
+  },
+  {
+    "title": "(Untitled)",
+    "artist": "The Byrds",
+    "releaseYear": 1970,
+    "format": "LP"
+  },{
+    "title": "Candy-O",
+    "artist": "The Cars",
+    "releaseYear": 1979,
+    "format": "LP"
+  },{
+    "title": "Rohnert Park",
+    "artist": "Ceremony",
+    "releaseYear": 2010,
+    "format": "LP"
+  },{
+    "title": "Zoo",
+    "artist": "Ceremony",
+    "releaseYear": 2012,
+    "format": "LP"
+  },{
+    "title": "Tequila",
+    "artist": "The Champs",
+    "releaseYear": 1957,
+    "format": "LP"
+  },{
+    "title": "Dream Police",
+    "artist": "Cheap Trick",
+    "releaseYear": 1979,
+    "format": "LP"
+  },{
+    "title": "Group Sex",
+    "artist": "Circle Jerks",
+    "releaseYear": 1980,
+    "format": "LP"
+  },{
+    "title": "Combat Rock",
+    "artist": "The Clash",
+    "releaseYear": 1982,
+    "format": "LP"
+  },{
+    "title": "The Harder They Come",
+    "artist": "Jimmy Cliff",
+    "releaseYear": 1972,
+    "format": "LP"
+  },{
+    "title": "The Patsy Cline Story",
+    "artist": "Patsy Cline",
+    "releaseYear": 1980,
+    "format": "LP"
+  },{
+    "title": "Goddamage",
+    "artist": "Coliseum",
+    "releaseYear": 2005,
+    "format": "LP"
+  },{
+    "title": "My Aim is True",
+    "artist": "Elvis Costello",
+    "releaseYear": 1977,
+    "format": "LP"
+  },{
+    "title": "Fresh Cream",
+    "artist": "Cream",
+    "releaseYear": 1966,
+    "format": "LP"
+  },{
+    "title": "More Creedence Gold",
+    "artist": "Creedence Clearwater Revival",
+    "releaseYear": 1973,
+    "format": "LP"
+  },{
+    "title": "Green River",
+    "artist": "Creedence Clearwater Revival",
+    "releaseYear": 1969,
+    "format": "LP"
+  },{
+    "title": "Life and Times",
+    "artist": "Jim Croce",
+    "releaseYear": 1973,
+    "format": "LP"
+  },{
+    "title": "The Faces I've Been",
+    "artist": "Jim Croce",
+    "releaseYear": 1975,
+    "format": "LP"
+  },{
+    "title": "You Don't Mess Around With Jim",
+    "artist": "Jim Croce",
+    "releaseYear": 1972,
+    "format": "LP"
+  },{
+    "title": "Goes Digital",
+    "artist": "Carlo Curley",
+    "releaseYear": 1979,
+    "format": "LP"
+  },{
+    "title": "Crack In The System",
+    "artist": "Dead Moon",
+    "releaseYear": 1994,
+    "format": "LP"
+  },{
+    "title": "In The Graveyard",
+    "artist": "Dead Moon",
+    "releaseYear": 1988,
+    "format": "LP"
+  },{
+    "title": "Spiritual, Mental, Physical",
+    "artist": "Death",
+    "releaseYear": 2011,
+    "format": "LP"
+  },{
+    "title": "Milo Goes To College",
+    "artist": "Descendents",
+    "releaseYear": 1982,
+    "format": "LP"
+  },{
+    "title": "Everything Sucks",
+    "artist": "Descendents",
+    "releaseYear": 1996,
+    "format": "LP"
+  },{
+    "title": "4 of a Kind",
+    "artist": "DRI",
+    "releaseYear": 1988,
+    "format": "LP"
+  },{
+    "title": "Dealing With It",
+    "artist": "DRI",
+    "releaseYear": 1985,
     "format": "LP"
   }
 ]
