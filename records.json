@@ -3,8 +3,7 @@
     "artist": "AFI",
     "releaseYear": 1997,
     "format": "LP"
-  },
-  {
+  },{
     "title": "The Psychedelic Sounds of",
     "artist": "13th Floor Elevators",
     "releaseYear": 1966,
@@ -18,11 +17,6 @@
     "title": "As The Eternal Cowboy",
     "artist": "Against Me!",
     "releaseYear": 2003,
-    "format": "LP"
-  },{
-    "title": "Transgender Dysphoria Blues",
-    "artist": "Against Me!",
-    "releaseYear": 2014,
     "format": "LP"
   },{
     "title": "Heavy Window",
@@ -40,11 +34,6 @@
     "releaseYear": 2013,
     "format": "LP"
   },{
-    "title": "Bad Brains",
-    "artist": "Bad Brains",
-    "releaseYear": 1982,
-    "format": "LP"
-  },{
     "title": "Wild Planet",
     "artist": "The B-52's",
     "releaseYear": 1980,
@@ -53,6 +42,11 @@
     "title": "Whammy!",
     "artist": "The B-52's",
     "releaseYear": 1983,
+    "format": "LP"
+  },{
+    "title": "Bad Brains",
+    "artist": "Bad Brains",
+    "releaseYear": 1982,
     "format": "LP"
   },{
     "title": "Dead Loop",
