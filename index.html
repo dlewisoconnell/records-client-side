@@ -14,10 +14,12 @@
       text-align: center;
       margin-bottom: 20px;
     }
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
     table {
       width: 100%;
       border-collapse: collapse;
@@ -65,10 +67,38 @@
     .pagination button:hover {
       background-color: #abababdd;
     }
+
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    #prevBtn,
+    #nextBtn {
+      padding: 5px 10px;
+      background-color: #ddd;
+      color: black;
+      cursor: pointer;
+      border: none;
+      border-radius: 3px;
+    }
+
+    #prevBtn:hover,
+    #nextBtn:hover {
+      background-color: #abababdd;
+;
+    }
   </style>
 </head>
 <body>
   <h1>Records</h1>
+  
+  <div class="btn-container">
+    <button id="prevBtn" disabled>Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
+
   <table id="records-table">
     <thead>
       <tr>
@@ -80,18 +110,13 @@
     </thead>
     <tbody id="records-body"></tbody>
   </table>
-  
-  <div class="pagination">
-    <button id="prevBtn" disabled>Previous</button>
-    <button id="nextBtn">Next</button>
-  </div>
 
-<h1>Statistics</h1>
+  <h1>Statistics</h1>
 
-<h2>Records By Year</h2>
+  <h2>Records By Year</h2>
   <canvas id="myChart"></canvas>
 
-<h2>Most Frequent Artists</h2>
+  <h2>Most Frequent Artists</h2>
 
   <table>
     <thead>
