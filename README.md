@@ -1,4 +1,4 @@
-# Danny's Record Collection (Client-side Version)
+# Record Collection Management System (Client-side Version)
 
 This project is a client-side web application that displays and analyzes Danny's record collection. It provides a user interface to browse through the records, view statistics, and see information about the collection. The client-side version is designed to be easily deployed to the internet without the need for a back-end server.
 
