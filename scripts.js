@@ -3,26 +3,27 @@ fetch('records.json')
   .then(data => {
     const totalRecords = document.getElementById('total-records');
     const artistsBody = document.getElementById('artists-body');
-
     function generateArtistTable() {
       const artistsData = getArtistsWithMultipleRecords(data);
       artistsBody.innerHTML = '';
-
-      artistsData.forEach(artist => {
+    
+      const top10Artists = artistsData.slice(0, 10); // Retrieve only the top 10 artists
+    
+      top10Artists.forEach(artist => {
         const row = document.createElement('tr');
         const artistCell = document.createElement('td');
         const countCell = document.createElement('td');
-
+    
         artistCell.textContent = artist.name;
         countCell.textContent = artist.count;
-
+    
         row.appendChild(artistCell);
         row.appendChild(countCell);
-
+    
         artistsBody.appendChild(row);
       });
     }
-
+    
     function getArtistsWithMultipleRecords(records) {
       const artistCounts = {};
 
