@@ -1,13 +1,15 @@
 fetch('records.json')
   .then(response => response.json())
   .then(data => {
+    recordsData = data;
     const totalRecords = document.getElementById('total-records');
     const artistsBody = document.getElementById('artists-body');
+    
     function generateArtistTable() {
       const artistsData = getArtistsWithMultipleRecords(data);
       artistsBody.innerHTML = '';
     
-      const top10Artists = artistsData.slice(0, 10); // Retrieve only the top 10 artists
+      const top10Artists = artistsData.slice(0, 10);
     
       top10Artists.forEach(artist => {
         const row = document.createElement('tr');
@@ -24,6 +26,7 @@ fetch('records.json')
       });
     }
     
+  
     function getArtistsWithMultipleRecords(records) {
       const artistCounts = {};
 
@@ -50,12 +53,34 @@ fetch('records.json')
     generateArtistTable();
   });
 
-fetch('records.json')
+  const linkExceptionsBandcamp = [
+    'Anwar Sadat',
+    'Apache Dropout',
+    'Big Eyes',
+    'Black Cross',
+    'Coliseum',
+    'Destruction Unit',
+    'Elsinores',
+    'Good Shade',
+    'Hank Wood And The Hammerheads',
+    'Milk Music',
+    'Phasm',
+    'Sorespot',
+    'This Is My Fist',
+    'Tropical Trash',
+    'Tweens',
+    'Mystic 100s'
+  ];
+  
+  
+fetch('records.JSON')
   .then(response => response.json())
   .then(data => {
     const recordsBody = document.getElementById('records-body');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const firstBtn = document.getElementById('firstBtn'); // Add first button element
+    const lastBtn = document.getElementById('lastBtn'); // Add last button element
     const titleHeader = document.getElementById('title-header');
     const artistHeader = document.getElementById('artist-header');
     const releaseYearHeader = document.getElementById('release-year-header');
@@ -65,45 +90,58 @@ fetch('records.json')
     let totalPages = Math.ceil(data.length / recordsPerPage);
     let currentColumn = 'artist';
     let currentSortOrder = 'asc';
+    
     function showRecords(page) {
       recordsBody.innerHTML = '';
-    
+
       const sortedData = sortRecords(data, currentColumn, currentSortOrder);
       const startIndex = (page - 1) * recordsPerPage;
       const endIndex = startIndex + recordsPerPage;
       let recordsToShow = sortedData.slice(startIndex, endIndex);
-    
+
       recordsToShow.forEach(record => {
         const row = document.createElement('tr');
         const titleCell = document.createElement('td');
         const artistCell = document.createElement('td');
         const yearCell = document.createElement('td');
         const formatCell = document.createElement('td');
-    
-        titleCell.textContent = record.title;
+
+        const titleLink = document.createElement('a');
+        titleLink.textContent = record.title;
+        titleLink.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(record.title + ' ' + record.artist)}`;
+        titleLink.target = '_blank';
+        titleLink.title = `Listen to the ${record.title} album on YouTube`;
+        titleCell.appendChild(titleLink);
+
         yearCell.textContent = record.releaseYear;
         formatCell.textContent = record.format;
-    
+
         const artistLink = document.createElement('a');
         const wikipediaLink = getWikipediaLink(record.artist);
-    
-        if (wikipediaLink) {
+        if (linkExceptionsBandcamp.includes(record.artist)) {
+          artistLink.textContent = record.artist;
+          artistLink.href = `https://${convertToBandcampFormat(record.artist)}.bandcamp.com`;
+          artistLink.target = '_blank';
+          artistLink.title = `Check out ${record.artist} on Bandcamp`;
+        } else if (wikipediaLink) {
           artistLink.href = wikipediaLink;
           artistLink.textContent = record.artist;
           artistLink.target = '_blank';
-        } else {
+          artistLink.title = `Read about ${record.artist} on Wikipedia`;
+        }  else {
           artistLink.textContent = record.artist;
           artistLink.style.pointerEvents = 'none';
           artistLink.style.color = '#000000';
         }
     
+
         artistCell.appendChild(artistLink);
-    
+
         row.appendChild(titleCell);
         row.appendChild(artistCell);
         row.appendChild(yearCell);
         row.appendChild(formatCell);
-    
+
         recordsBody.appendChild(row);
       });
     
@@ -126,6 +164,8 @@ fetch('records.json')
       const yearsData = getRecordsByYear(data);
       updateChart(yearsData);
     }
+    
+
     
     function getWikipediaLink(artist) {
       const linkExceptions = {
@@ -152,25 +192,6 @@ fetch('records.json')
         'Wipers': 'Wipers (band)'
       };
     
-      const linkExceptionsBandcamp = [
-        'Anwar Sadat',
-        'Apache Dropout',
-        'Big Eyes',
-        'Black Cross',
-        'Coliseum',
-        'Destruction Unit',
-        'Elsinores',
-        'Good Shade',
-        'Hank Wood And The Hammerheads',
-        'Milk Music',
-        'Phasm',
-        'Sorespot',
-        'This Is My Fist',
-        'Tropical Trash',
-        'Tweens',
-        'Mystic 100s'
-      ];
-    
       const noLinkArtists = [
         'Blatz/Filth',
         'Bugg',
@@ -183,21 +204,22 @@ fetch('records.json')
         'Shutaro Noguchi',
         'State Champion',
       ];
-    
+
       if (noLinkArtists.includes(artist)) {
         return '';
-      }
-    
-      if (linkExceptions.hasOwnProperty(artist)) {
-        return `https://en.wikipedia.org/wiki/${encodeURIComponent(linkExceptions[artist])}`;
       }
     
       if (linkExceptionsBandcamp.includes(artist)) {
         return `https://${convertToBandcampFormat(artist)}.bandcamp.com`;
       }
     
+      if (linkExceptions.hasOwnProperty(artist)) {
+        return `https://en.wikipedia.org/wiki/${encodeURIComponent(linkExceptions[artist])}`;
+      }
+    
       return `https://en.wikipedia.org/wiki/${encodeURIComponent(artist)}`;
     }
+    
     
     function convertToBandcampFormat(artist) {
       return artist.replace(/ /g, '').toLowerCase();
@@ -245,35 +267,9 @@ fetch('records.json')
       return yearsData;
     }
 
-    function updateChart(yearsData) {
-      const chartCanvas = document.getElementById('myChart');
-      const years = Object.keys(yearsData);
-      const counts = Object.values(yearsData);
 
-      const ctx = chartCanvas.getContext('2d');
-      const chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: years,
-          datasets: [{
-            label: 'Records Released per Year',
-            data: counts,
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-              precision: 0,
-              stepSize: 1
-            }
-          }
-        }
-      });
-    }
+    
+    
 
     function updateSortIndicator(header, sortOrder) {
       const sortIndicator = sortOrder === 'asc' ? '▲' : '▼';
@@ -289,7 +285,6 @@ fetch('records.json')
     
     showRecords(currentPage);
     
-    // Call updateSortIndicator for each header to display the sort indicator initially
     updateSortIndicator(artistHeader, currentSortOrder);
 
     prevBtn.addEventListener('click', () => {
@@ -363,3 +358,56 @@ fetch('records.json')
     });
     
   });
+
+
+  function updateChart(yearsData) {
+    const chartCanvas = document.getElementById('myChart');
+    const years = Object.keys(yearsData);
+    const counts = Object.values(yearsData);
+  
+    const ctx = chartCanvas.getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{
+          label: 'Records Released per Year',
+          data: counts,
+          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            precision: 0,
+            stepSize: 1
+          }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: (context) => {
+                const index = context.dataIndex;
+                const year = context.label;
+                const count = context.parsed.y;
+  
+                const records = recordsData.filter(record => record.releaseYear === year);
+                recordDetails = records.map(record => `${record.artist} - ${record.title}`).join('\n');
+              
+                let label = `Records: ${count}`;
+                if (recordDetails) {
+                  label += `\n\n${recordDetails}`;
+                }
+  
+                return label;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+  
