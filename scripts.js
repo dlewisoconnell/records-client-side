@@ -73,7 +73,7 @@ fetch('records.json')
   ];
   
   
-fetch('records.JSON')
+fetch('records.json')
   .then(response => response.json())
   .then(data => {
     const recordsBody = document.getElementById('records-body');
